@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class authors extends Model
 {
     use HasFactory;
+
+    public function book()
+    {
+       return $this->hasMany(books::class);
+    }
 }

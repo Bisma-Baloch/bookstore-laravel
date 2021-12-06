@@ -6,10 +6,11 @@
 <h3 class="text-center ml-5">SIGN UP</h3>
 <br>
 
-<form class="mx-auto w-25" action="/loginsubmit" method="POST">
-<div class="form-group">
+<form class="mx-auto w-25" action="{{ route('signup-Confirm')}}" method="POST">
+  @csrf
+  <div class="form-group">
     <label for="username">Username:</label>
-    <input type="username" class="form-control" placeholder="Enter username" name="username">
+    <input type="username" class="form-control" placeholder="Enter username" name="name">
   </div>
  
   <div class="form-group">
@@ -20,13 +21,14 @@
     <label for="pwd">Password:</label>
     <input type="password" class="form-control" placeholder="Enter password" name="password" id="pwd">
   </div>
-  <select class="custom-select mb-2">
+  {{-- <select class="custom-select mb-2">
       <option selected>Custom Select</option>
       <option value="admin">Admin</option>
       <option value="user">Customer</option>
     </select>
- 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  --}}
+  <button type="submit" value="Submit" class="btn btn-primary">Submit</button>                
+
 </form>
 <br><br>
 

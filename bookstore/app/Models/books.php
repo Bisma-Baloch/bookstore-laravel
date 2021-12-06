@@ -8,12 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class books extends Model
 {
     use HasFactory;
-    public function authors(){
-        $this->belongsTo(authors::class);
+    public function author(){
+       return $this->belongsTo(authors::class, 'author_id');
     }
 
     public function category(){
-        $this->belongsTo(categories::class);
+       return $this->belongsTo(categories::class, 'category_id');
+    }
+
+    public function order(){
+       return $this->hasMany(orders_items::class);
     }
 
 }

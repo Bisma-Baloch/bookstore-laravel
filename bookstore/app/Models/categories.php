@@ -10,6 +10,6 @@ class categories extends Model
     use HasFactory;
 
     public function book(){
-        $this->hasMany(books::class);
+       return $this->hasMany(books::class);
     }
 }

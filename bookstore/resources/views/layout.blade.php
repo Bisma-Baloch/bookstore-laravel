@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <html>
 
 <head>
@@ -20,27 +22,28 @@
   <!-- Links -->
   <ul class="navbar-nav mx-auto text-white">
     <li class="nav-item">
-      <a class="nav-link" href="index">Home</a>
+      <a class="nav-link" href="{{route('index')}}">Home</a>
     </li>
     
     <!-- Dropdown -->
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+      <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
         Categories
       </a>
       
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Science And Technology</a>
-        <a class="dropdown-item" href="#">History</a>
-        <a class="dropdown-item" href="#">Fiction</a>
-        <a class="dropdown-item" href="#">Biographies</a>
+        @foreach ($categories as $item)
+        <a class="dropdown-item"
+         href="{{route('category',$item->id)}}"
+          >  {{$item->name}}</a>
+        @endforeach
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="about">About</a>
+      <a class="nav-link" href="{{ url('about') }}">About</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="contact">Contact</a>
+      <a class="nav-link" href="{{ url('contact') }}">Contact</a>
     </li>
 
   </ul>
@@ -48,9 +51,24 @@
 
     <div class="head">
       <ul>
-        <li><a href="login">Login</a></li>
-        <li><a href="signup">Sign In</a></li>
-        <li><a href="cart"><i class="fal fa-shopping-cart font-weight-normal"></i></a></li>
+        @guest
+        <li><a href="{{ route('login') }}">Login</a></li>
+        @endguest
+
+        @guest
+        <li><a href="{{ route('signup')}}">Sign In</a></li>
+        @endguest
+
+        @if (empty(session('user')))
+            @auth
+            <li><a href="{{ route('logout') }}">Log Out</a></li>
+            @endauth
+            @auth
+            <li><a href="{{ route('my-orders') }}">My Orders</a></li>
+            @endauth
+        @endif
+
+        <li><a href="{{ route('cart') }}"><i class="fal fa-shopping-cart font-weight-normal"></i></a></li> 
       </ul>
     </div>
    

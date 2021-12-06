@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->float('total_amount', 8, 2);
             $table->integer('total_items');
-            $table->date('order_date');
+            
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
