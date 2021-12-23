@@ -2,6 +2,16 @@
 
 @section('content')
 
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $err)
+        <li> {{ $err }} </li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <br><br><br>
 <h3 class="text-center ml-5">SIGN UP</h3>
 <br>
@@ -21,12 +31,12 @@
     <label for="pwd">Password:</label>
     <input type="password" class="form-control" placeholder="Enter password" name="password" id="pwd">
   </div>
-  {{-- <select class="custom-select mb-2">
+  <select class="custom-select mb-2" name="type">
       <option selected>Custom Select</option>
-      <option value="admin">Admin</option>
-      <option value="user">Customer</option>
+      <option value="ADMIN">Admin</option>
+      <option value="CUSTOMER">Customer</option>
     </select>
-  --}}
+  <br> 
   <button type="submit" value="Submit" class="btn btn-primary">Submit</button>                
 
 </form>

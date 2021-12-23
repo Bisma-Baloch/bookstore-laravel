@@ -19,10 +19,17 @@ class SignupController extends Controller
     }
 
     public function signupConfirm(Request $req){
+        $req->validate([
+            'name' => 'string|min:3|max:15',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+            'type' => 'required'
+        ]);
         $user = new User();
         $user->name = $req->name;
         $user->email = $req->email;
         $user->password = Hash::make($req->password);
+        $user->type = $req->type;
         $user->save();
         return redirect('index');
 

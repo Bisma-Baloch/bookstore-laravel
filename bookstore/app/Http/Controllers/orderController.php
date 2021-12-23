@@ -66,4 +66,17 @@ class orderController extends Controller
             'categories'=>$categories
         ]);
     }
+
+    public function adminOrder(){
+        $orders = orders::get();
+        return view('admin.order.orders',[
+            'orders' => $orders
+        ]);
+    }
+    public function allOrder(){
+        $orderItems = orders_items::get();
+        return view('admin.order.allorders',[
+            'orderItems' => $orderItems
+        ]);
+    }
 }

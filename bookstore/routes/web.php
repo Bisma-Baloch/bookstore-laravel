@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\admin\AuthorController;
+use App\Http\Controllers\admin\BookController;
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
@@ -49,3 +52,12 @@ Route::get('order_create',[orderController::class, 'orderCreate'])->name('create
 
 Route::get('about',[AboutController::class, 'index']);
 Route::get('contact',[ContactController::class, 'index']);
+
+// Admin Panel
+Route::resource('books', BookController::class);
+
+Route::resource('authors', AuthorController::class);
+Route::resource('categories', CategoryController::class);
+Route::get('admin/orders',[orderController::class, 'adminOrder'])->name('orders');
+Route::get('admin/allorders',[orderController::class, 'allOrder'])->name('order');
+

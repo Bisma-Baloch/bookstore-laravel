@@ -13,4 +13,6 @@ class authors extends Model
     {
        return $this->hasMany(books::class);
     }
+
+
 }
