@@ -45,8 +45,8 @@
                                     <form action="{{ route('delete') }}" method="POST">
                                         @csrf
                                         @method('POST')
-                                        <input type="hidden" value="{{ $index++ }}">
-                                        <td><button style="border: none"><i class="fas fa-trash"></i></button></td>
+                                        <input type="hidden" name="index" value="{{ $index }}">
+                                     <td><button style="border: none; outline:none"><i class="fas fa-trash"></i></button></td>
 
                                     </form>
 
