@@ -9,6 +9,10 @@ class orders_items extends Model
 {
     use HasFactory;
     public function book(){
-        return $this->belongsTo(books::class);
+        return $this->belongsTo(books::class, 'book_id');
+    }
+
+    public function order(){
+        return $this->belongsTo(orders::class, 'order_id');
     }
 }

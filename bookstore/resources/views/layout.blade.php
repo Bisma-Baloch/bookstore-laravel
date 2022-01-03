@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <html>
 
 <head>
@@ -30,12 +28,10 @@
       <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
         Categories
       </a>
-      
-      <div class="dropdown-menu">
+     <div class="dropdown-menu">
         @foreach ($categories as $item)
         <a class="dropdown-item"
-         href="{{route('category',$item->id)}}"
-          >  {{$item->name}}</a>
+         href="{{route('category',$item->id)}}">  {{$item->name}}</a>
         @endforeach
       </div>
     </li>
@@ -49,8 +45,15 @@
   </ul>
 </nav>
 
+
+
     <div class="head">
       <ul>
+        {{-- redirect admin to admin Page --}}
+        @if (Auth::user() && Auth::user()->type == 'ADMIN')
+        <li><a href="{{ route('books.index')}}">Admin</a></li>
+        @endif  
+    
         @guest
         <li><a href="{{ route('login') }}">Login</a></li>
         @endguest

@@ -15,10 +15,10 @@ class orderController extends Controller
     {
         $orders = orders::where('user_id', Auth::user()->id)->get();
         $categories = categories::get();
-        
+
         return view('myorders', [
             'orders' => $orders,
-            'categories'=>$categories
+            'categories' => $categories
         ]);
     }
 
@@ -28,13 +28,13 @@ class orderController extends Controller
             DB::beginTransaction();
 
             $cart_items = session('cartItems');
-            
+
             $order = new orders();
-            
+
             $order->total_amount = array_reduce(session('cartItems'), function ($carry, $item) {
                 return $carry + $item['quantity'] * $item['price'];
             }, 0);
-            
+
             $order->total_items = count($cart_items);
             $order->user_id = Auth::user()->id;
             $order->save();
@@ -50,7 +50,6 @@ class orderController extends Controller
             DB::commit();
             session()->put('cartItems', []);
             return redirect('myorders');
-
         } else {
             return redirect('login');
         }
@@ -60,10 +59,26 @@ class orderController extends Controller
     {
         $orderItems = orders_items::where('order_id', $req->id)->get();
         $categories = categories::get();
-        
-        return view('orderdetails',[
+
+        return view('orderdetails', [
             'orderItems' => $orderItems,
-            'categories'=>$categories
+            'categories' => $categories
+        ]);
+    }
+
+    public function adminOrder()
+    {
+        $orders = orders::get();
+        return view('admin.order.orders', [
+            'orders' => $orders
+        ]);
+    }
+
+    public function adminOrderView($id)
+    {
+        $orderItems = orders_items::where('order_id', $id)->get();
+        return view('admin.order.view', [
+            'orderItems' => $orderItems
         ]);
     }
 }
