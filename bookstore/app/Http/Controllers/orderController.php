@@ -66,8 +66,8 @@ class orderController extends Controller
         ]);
     }
 
-    public function adminOrder()
-    {
+    // Admin Part
+    public function adminOrder(){
         $orders = orders::get();
         return view('admin.order.orders', [
             'orders' => $orders
