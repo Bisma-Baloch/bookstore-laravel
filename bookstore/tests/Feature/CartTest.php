@@ -39,7 +39,6 @@ class CartTest extends TestCase
         $category = categories::factory()->create();
         $book = books::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
 
-
         session()->put('cartItems', [
             'name' => $book->name,
             'image' => $book->image,
@@ -66,8 +65,7 @@ class CartTest extends TestCase
             'book_id' => $book->id
         ]);
         $this->post(route('delete', 0))
-        ->assertDontSee($book->name)
-        ->assertDontSee($book->price);
+            ->assertDontSee($book->name)
+            ->assertDontSee($book->price);
     }
-
 }

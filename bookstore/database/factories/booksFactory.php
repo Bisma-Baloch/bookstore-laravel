@@ -24,8 +24,3 @@ class booksFactory extends Factory
         ];
     }
 }
-
-
-
-
-
