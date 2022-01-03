@@ -23,13 +23,14 @@
         <td>{{ $book->category->name }}</td>
         <td> {{$book->author->name}}</td>
         <td>Rs {{$book->price}}</td>
-        <td>
-            <form action="{{ route('books.destroy', $book->id) }}" method="POST">
+        <td class="d-flex pl-5">
+           
                 <a href="{{ route('books.edit', $book->id) }}" class="btn btn-primary">Update</a>
+                <form action="{{ route('books.destroy', $book->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
 
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger ml-2">Delete</button>
             </form>
         </td>
     </tr>
