@@ -18,7 +18,6 @@ class AuthorTest extends TestCase
     {
         $this->login();
         $author = Author::factory()->create(['name' => 'ali']);
-        file_put_contents("r.html",$this->get(route('authors.index'))->getContent());
         $this->get(route('authors.index'))
         ->assertOk()
         ->assertSee($author->name);
