@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\books;
+use App\Models\Book;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class booksFactory extends Factory
+class BookFactory extends Factory
 {
     /**
      * Define the model's default state.
      *
      * @return array
      */
-    protected $model = books::class;
+    protected $model = Book::class;
 
     public function definition()
     {

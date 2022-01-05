@@ -2,23 +2,23 @@
 
 namespace Database\Factories;
 
-use App\Models\authors;
+use App\Models\Order;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class authorsFactory extends Factory
+class OrderFactory extends Factory
 {
     /**
      * Define the model's default state.
      *
      * @return array
      */
-    protected $model = authors::class;
+    protected $model = Order::class;
 
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            
+            'total_items' => 2,
+            'created_at' => $this->faker->date()
         ];
     }
 }

@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\categories;
-use App\Models\orders;
-use App\Models\orders_items;
+use App\Models\Category;
+use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class orderController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function order()
     {
-        $orders = orders::where('user_id', Auth::user()->id)->get();
-        $categories = categories::get();
+        $orders = Order::where('user_id', Auth::user()->id)->get();
+        $categories = Category::get();
 
         return view('myorders', [
             'orders' => $orders,
@@ -29,7 +35,7 @@ class orderController extends Controller
 
             $cart_items = session('cartItems');
 
-            $order = new orders();
+            $order = new Order();
 
             $order->total_amount = array_reduce(session('cartItems'), function ($carry, $item) {
                 return $carry + $item['quantity'] * $item['price'];
@@ -40,7 +46,7 @@ class orderController extends Controller
             $order->save();
 
             foreach ($cart_items as $cart_item) {
-                $orderItem = new orders_items();
+                $orderItem = new OrderItem();
                 $orderItem->qty = $cart_item['quantity'];
                 $orderItem->book_id = $cart_item['id'];
                 $orderItem->order_id = $order->id;
@@ -57,8 +63,8 @@ class orderController extends Controller
 
     public function index(Request $req)
     {
-        $orderItems = orders_items::where('order_id', $req->id)->get();
-        $categories = categories::get();
+        $orderItems = OrderItem::where('order_id', $req->id)->get();
+        $categories = Category::get();
 
         return view('orderdetails', [
             'orderItems' => $orderItems,
@@ -68,7 +74,7 @@ class orderController extends Controller
 
     // Admin Part
     public function adminOrder(){
-        $orders = orders::get();
+        $orders = Order::get();
         return view('admin.order.orders', [
             'orders' => $orders
         ]);
@@ -76,7 +82,7 @@ class orderController extends Controller
 
     public function adminOrderView($id)
     {
-        $orderItems = orders_items::where('order_id', $id)->get();
+        $orderItems = OrderItem::where('order_id', $id)->get();
         return view('admin.order.view', [
             'orderItems' => $orderItems
         ]);

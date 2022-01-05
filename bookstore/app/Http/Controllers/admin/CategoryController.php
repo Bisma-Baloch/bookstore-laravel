@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\categories;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +19,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = categories::get();
+        $categories = Category::get();
         return view('admin.category.categories',[
             'categories' => $categories
         ]);
@@ -42,7 +46,7 @@ class CategoryController extends Controller
         $request->validate([
             'name' => 'required|min:3|max:50'
         ]);
-        $categories = new categories();
+        $categories = new Category();
         $categories->name = $request->name;
         $categories->save();
 
@@ -70,7 +74,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
 
-        $categories = categories::find($id);
+        $categories = Category::find($id);
         return view('admin.category.edit',[
             'categories' => $categories
         ]);
@@ -89,7 +93,7 @@ class CategoryController extends Controller
             'name' => 'required|min:3|max:50'
         ]);
 
-        $categories =categories::findOrFail($id);
+        $categories =Category::findOrFail($id);
         $categories->name = $request->name;
         $categories->update();
 
@@ -104,7 +108,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $categories = categories::findorFail($id);
+        $categories = Category::findorFail($id);
 
         $categories->delete();
  

@@ -3,11 +3,16 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Author;
 use App\Models\authors;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = authors::get();
+        $authors = Author::get();
         return view('admin.author.authors',[
            'authors' => $authors
         ]);
@@ -42,7 +47,7 @@ class AuthorController extends Controller
         $request->validate([
             'name' => 'required|min:3|max:50'
         ]);
-        $authors = new authors();
+        $authors = new Author();
         $authors->name = $request->name;
         $authors->save();
 
@@ -69,7 +74,7 @@ class AuthorController extends Controller
      */
     public function edit($id)
     {
-        $author = authors::find($id);
+        $author = Author::find($id);
        return view('admin.author.edit',['author'=>$author]);
     }
 
@@ -87,7 +92,7 @@ class AuthorController extends Controller
             'name' => 'required|min:3|max:50'
         ]);
 
-        $author = authors::findOrFail($id);
+        $author = Author::findOrFail($id);
         $author->name = $request->name;
         $author->update();
 
@@ -103,7 +108,7 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {
-       $authors = authors::findorFail($id);
+       $authors = Author::findorFail($id);
 
        $authors->delete();
 

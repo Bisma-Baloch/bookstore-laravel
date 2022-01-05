@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class orders extends Model
+class Author extends Model
 {
     use HasFactory;
 
-
-    public function orderItem()
+    public function book()
     {
-       return $this->hasMany(orders_items::class);
+       return $this->hasMany(Book::class);
     }
+
+
 }

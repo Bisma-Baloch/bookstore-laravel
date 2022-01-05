@@ -16,6 +16,7 @@ class LoginTest extends TestCase
      */
     public function testLogin()
     {
+        $this->login();
         $user = User::factory()->create();
         $this->get(route('login'))
         ->assertOk()

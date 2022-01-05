@@ -3,13 +3,20 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Author;
 use App\Models\authors;
+use App\Models\Book;
 use App\Models\books;
 use App\Models\categories;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +24,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = books::get();
+        $books = Book::get();
         return view('admin.books.index',[
             'books' => $books
         ]);
@@ -30,8 +37,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        $authors = authors::get();
-        $categories = categories::get();
+        $authors = Author::get();
+        $categories = Category::get();
         return view('admin.books.create',[
             'authors' => $authors,
             'categories' => $categories
@@ -55,11 +62,11 @@ class BookController extends Controller
             'description' => 'required|min:50|max:300'
         ]);
 
-        $books = new books();
+        $books = new Book();
        
         $books->name = $request->name;
         $books->author_id = $request->author_id;
-       $books->category_id = $request->category_id;
+        $books->category_id = $request->category_id;
         $books->image = $request->image;
         $books->price = $request->price;
         $books->description = $request->description;
@@ -88,9 +95,9 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        $authors = authors::get();
-        $categories = categories::get();
-        $books = books::find($id);
+        $authors = Author::get();
+        $categories = Category::get();
+        $books = Book::find($id);
         return view('admin.books.edit',[
             'books'=>$books,
             'authors' => $authors,
@@ -118,7 +125,7 @@ class BookController extends Controller
         ]);
 
 
-        $books = books::findOrFail($id);
+        $books = Book::findOrFail($id);
 
         $books->name = $request->name;
         $books->author_id = $request->author_id;
@@ -141,7 +148,7 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        $books = books::findorFail($id);
+        $books = Book::findorFail($id);
 
         $books->delete();
  

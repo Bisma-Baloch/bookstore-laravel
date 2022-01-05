@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\categories;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
     public function index(){
-        $categories = categories::get();
+        $categories = Category::get();
         return view('contact',[
             'categories' =>$categories
         ]);

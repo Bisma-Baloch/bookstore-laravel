@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\books;
 use App\Models\categories;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
 {
 
     public function index(){
-        $books = books::get();
-        $categories = categories::get();
+        $books = Book::get();
+        $categories = Category::get();
         return view('index',[
             'books' => $books,
             'categories'=>$categories
@@ -19,8 +21,8 @@ class BooksController extends Controller
 
     }
         public function bookDetail(Request $request){
-            $book = books::findOrFail($request->id);
-            $categories = categories::get();
+            $book = Book::findOrFail($request->id);
+            $categories = Category::get();
             return view('bookDetails',[
                 'book' =>$book,
                 'categories'=>$categories
@@ -29,11 +31,11 @@ class BooksController extends Controller
     }
 
     public function category($id){
-        $books = books::where('category_id',$id)->get();
+        $books = Book::where('category_id',$id)->get();
         
-        $categories = categories::get();
+        $categories = Category::get();
         
-        $categoryName = categories::select('name')->findOrFail($id);
+        $categoryName = Category::select('name')->findOrFail($id);
         
         return view('category',[
             'books' => $books,

@@ -2,21 +2,22 @@
 
 namespace Database\Factories;
 
-use App\Models\categories;
+use App\Models\OrderItem;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class categoriesFactory extends Factory
+class OrderItemFactory extends Factory
 {
     /**
      * Define the model's default state.
      *
      * @return array
      */
-    protected $model = categories::class;
+    protected $model = OrderItem::class;
+
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'qty' => 2,
         ];
     }
 }

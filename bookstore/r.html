@@ -1,0 +1,826 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="http://localhost/css/app.css">
+</head>
+
+<body>
+  <div class="header">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">BookStore</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav mx-auto text-white">
+    <li class="nav-item">
+      <a class="nav-link" href="http://localhost/books">Home</a>
+    </li>
+    
+    <!-- Dropdown -->
+    <li class="nav-item">
+      <a class="nav-link" href="http://localhost/authors">Authors</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="http://localhost/categories">Categories</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="http://localhost/admin/orders">Orders</a>
+    </li>
+
+  </ul>
+</nav>
+   
+  </div>
+  <div class="content">
+    
+    <br><br>
+
+    <table class="table mx-auto mt-5 text-center w-50">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th colspan="2">Action</th>
+        </tr>
+
+                    <tr>
+                <td>1</td>
+                <td>Simon Pervan</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/1/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/1" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>2</td>
+                <td>Kristin Hannah</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/2/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/2" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>3</td>
+                <td>Sylvia Nasir</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/3/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/3" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>4</td>
+                <td>F.Scott Fitzgerald</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/4/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/4" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>5</td>
+                <td>Joseph Conard</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/5/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/5" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>7</td>
+                <td>Ravi P Agarhai</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/7/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/7" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>9</td>
+                <td>Charles Duhigg</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/9/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/9" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>10</td>
+                <td>William Least</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/10/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/10" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>11</td>
+                <td>Ryan Holiday</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/11/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/11" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>425</td>
+                <td>ali</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/425/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/425" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>426</td>
+                <td>Dr. Marta Moen V</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/426/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/426" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>427</td>
+                <td>Ruby Emard</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/427/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/427" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>428</td>
+                <td>Prof. Marshall Rau I</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/428/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/428" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>429</td>
+                <td>Dusty Koss MD</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/429/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/429" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>430</td>
+                <td>Verlie Ward</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/430/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/430" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>431</td>
+                <td>Miss Leola Schultz</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/431/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/431" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>432</td>
+                <td>Hayden Kertzmann MD</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/432/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/432" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>433</td>
+                <td>Dr. Akeem Simonis</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/433/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/433" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>434</td>
+                <td>Felicia Dach</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/434/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/434" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>435</td>
+                <td>Sterling Christiansen</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/435/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/435" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>436</td>
+                <td>Tracey Franecki</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/436/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/436" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>437</td>
+                <td>Lois Donnelly</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/437/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/437" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>438</td>
+                <td>Reina Bartoletti</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/438/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/438" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>439</td>
+                <td>ali</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/439/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/439" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>440</td>
+                <td>Khalid Mehmood khan</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/440/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/440" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>441</td>
+                <td>Dr. Penelope Thompson</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/441/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/441" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>442</td>
+                <td>Khalid Mehmood khan</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/442/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/442" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>443</td>
+                <td>Dr. Zachery Schuster III</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/443/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/443" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>444</td>
+                <td>Velda Torphy</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/444/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/444" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>445</td>
+                <td>Tillman Lubowitz</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/445/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/445" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>446</td>
+                <td>Ashlynn Rutherford</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/446/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/446" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>447</td>
+                <td>Gladys Lind</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/447/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/447" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>448</td>
+                <td>Francesca Kertzmann</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/448/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/448" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>449</td>
+                <td>Kelli Runte DVM</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/449/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/449" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>450</td>
+                <td>Mr. Virgil Eichmann</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/450/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/450" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>451</td>
+                <td>Theodore Veum</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/451/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/451" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>452</td>
+                <td>Ryder Von</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/452/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/452" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>453</td>
+                <td>Eric Metz</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/453/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/453" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>454</td>
+                <td>ali</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/454/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/454" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>455</td>
+                <td>Khalid Mehmood khan</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/455/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/455" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>456</td>
+                <td>Fay Abernathy</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/456/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/456" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>457</td>
+                <td>Khalid Mehmood khan</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/457/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/457" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>458</td>
+                <td>Barry Oberbrunner</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/458/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/458" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>459</td>
+                <td>Mrs. Zetta Reilly</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/459/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/459" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>460</td>
+                <td>Carlie Roob</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/460/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/460" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>461</td>
+                <td>Jerome Mosciski</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/461/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/461" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>462</td>
+                <td>Stephan Jacobi</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/462/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/462" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>463</td>
+                <td>Charlotte Grady IV</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/463/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/463" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>464</td>
+                <td>Bart Hoeger</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/464/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/464" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>465</td>
+                <td>Wilford Cassin</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/465/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/465" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>466</td>
+                <td>Adolf Schowalter</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/466/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/466" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>467</td>
+                <td>Prof. Bernard Monahan</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/467/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/467" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>468</td>
+                <td>Amina Schuster PhD</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/468/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/468" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>469</td>
+                <td>ali</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/469/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/469" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>470</td>
+                <td>Khalid Mehmood khan</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/470/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/470" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>471</td>
+                <td>Reginald Walsh</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/471/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/471" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>472</td>
+                <td>Khalid Mehmood khan</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/472/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/472" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>473</td>
+                <td>Paige Reichel</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/473/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/473" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>474</td>
+                <td>Lois Kautzer</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/474/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/474" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>475</td>
+                <td>Jason VonRueden</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/475/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/475" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>476</td>
+                <td>Rosina Sauer</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/476/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/476" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>477</td>
+                <td>Prof. Napoleon Abernathy</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/477/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/477" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>478</td>
+                <td>Prof. Sherman Hilpert</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/478/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/478" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>479</td>
+                <td>Korey Shanahan</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/479/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/479" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>480</td>
+                <td>Prof. Linnea Schoen</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/480/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/480" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>481</td>
+                <td>April Davis</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/481/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/481" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>482</td>
+                <td>Dr. Jay Jacobs</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/482/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/482" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>483</td>
+                <td>Shakira Bechtelar</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/483/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/483" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                    <tr>
+                <td>484</td>
+                <td>ali</td>
+                <td class="d-flex pl-5">
+                        <a href="http://localhost/authors/484/edit" class="btn btn-primary">Update</a>
+                        <form action="http://localhost/authors/484" method="POST">
+                        <input type="hidden" name="_token" value="hRZhMUdfIIjtVlJ5gpVbKLGw0hMEbJSTATAH5nhP">                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ml-2">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        
+    </table>
+    <br><br>
+    <div class="container text-center">
+        <a href="http://localhost/authors/create" role="button" class="btn btn-success">Create</a>
+    </div>
+
+
+  </div>
+  <br><br><br><br><br>
+  <div class="footer">
+        <p class="bg-primary py-3 mb-0">Copyright © 2020, Books Store, All Rights Reserved.</p>
+      </div>
+
+</body>
+
+</html>

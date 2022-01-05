@@ -18,7 +18,4 @@
         </div>
         <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
     </form>
-
-
-
 @endsection

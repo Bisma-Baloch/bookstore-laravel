@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Models\authors;
-use App\Models\books;
-use App\Models\categories;
+use App\Models\Author;
+use App\Models\Book;
+use App\Models\Category;
 use Carbon\Factory;
 use Database\Factories\booksFactory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -20,9 +20,9 @@ class IndexTest extends TestCase
      */
     public function testIndex()
     {
-        $author = authors::factory()->create();
-        $category = categories::factory()->create();
-        $book = books::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
+        $author = Author::factory()->create();
+        $category = Category::factory()->create();
+        $book = Book::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
 
         $this->get(route('index'))
             ->assertOk()
@@ -33,6 +33,7 @@ class IndexTest extends TestCase
 
     public function testCreate()
     {
+        $this->login();
         $this->get(route('books.create'))
             ->assertOk()
             ->assertSeeText('Book Name')
@@ -45,9 +46,10 @@ class IndexTest extends TestCase
 
     public function testEdit()
     {
-        $author = authors::factory()->create();
-        $category = categories::factory()->create();
-        $book = books::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
+        $this->login();
+        $author = Author::factory()->create();
+        $category = Category::factory()->create();
+        $book = Book::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
 
         $this->get(route('books.edit', $book->id))
             ->assertOk()
@@ -61,18 +63,20 @@ class IndexTest extends TestCase
 
     public function testDelete()
     {
-        $author = authors::factory()->create();
-        $category = categories::factory()->create();
-        $book = books::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
+        $this->login();
+        $author = Author::factory()->create();
+        $category = Category::factory()->create();
+        $book = Book::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
         $this->get(route('books.destroy', $book->id))
             ->assertOk();
     }
 
     public function testUpdate()
     {
-        $author = authors::factory()->create();
-        $category = categories::factory()->create();
-        $book = books::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
+        $this->login();
+        $author = Author::factory()->create();
+        $category = Category::factory()->create();
+        $book = Book::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
         $this->put(route('books.update', $book->id), [
             'name' => 'Biology',
             'image' => 'img/bio.png',
@@ -85,7 +89,7 @@ class IndexTest extends TestCase
             ->assertRedirect();
 
         $this->assertDatabaseHas(
-            (new books())->getTable(),
+            (new Book())->getTable(),
             [
                 'name' => 'Biology',
                 'image' => 'img/bio.png',
@@ -99,10 +103,10 @@ class IndexTest extends TestCase
 
     public function testStore()
     {
-
-        $author = authors::factory()->create();
-        $category = categories::factory()->create();
-        $book = books::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
+        $this->login();
+        $author = Author::factory()->create();
+        $category = Category::factory()->create();
+        $book = Book::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
         $this->post(route('books.store'), [
             'name' => 'Biology',
             'image' => 'img/bio.png',
@@ -115,7 +119,7 @@ class IndexTest extends TestCase
             ->assertRedirect();
 
         $this->assertDatabaseHas(
-            (new books())->getTable(),
+            (new Book())->getTable(),
             [
                 'name' => 'Biology',
                 'image' => 'img/bio.png',

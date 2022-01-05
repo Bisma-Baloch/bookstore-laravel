@@ -59,7 +59,5 @@ Route::resource('books', BookController::class);
 Route::resource('authors', AuthorController::class);
 Route::resource('categories', CategoryController::class);
 Route::get('admin/orders',[orderController::class, 'adminOrder'])->name('orders');
-Route::get('admin/allorders',[orderController::class, 'allOrder'])->name('order');
-// Route::get('admin/allorders',[orderController::class, 'allOrder'])->name('order');
 Route::get('admin/order/{id}',[orderController::class, 'adminOrderView'])->name('order');
 

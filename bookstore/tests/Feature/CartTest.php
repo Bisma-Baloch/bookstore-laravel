@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Models\authors;
-use App\Models\books;
-use App\Models\categories;
+use App\Models\Author;
+use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -18,9 +18,9 @@ class CartTest extends TestCase
      */
     public function testAddToCart()
     {
-        $author = authors::factory()->create();
-        $category = categories::factory()->create();
-        $book = books::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
+        $author = Author::factory()->create();
+        $category = Category::factory()->create();
+        $book = Book::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
 
         $this->post(route('cart-add'), [
             'name' => $book->name,
@@ -35,9 +35,10 @@ class CartTest extends TestCase
 
     public function testCart()
     {
-        $author = authors::factory()->create();
-        $category = categories::factory()->create();
-        $book = books::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
+        $this->login();
+        $author = Author::factory()->create();
+        $category = Category::factory()->create();
+        $book = Book::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
 
         session()->put('cartItems', [
             'name' => $book->name,
@@ -54,9 +55,9 @@ class CartTest extends TestCase
 
     public function testCartDelete()
     {
-        $author = authors::factory()->create();
-        $category = categories::factory()->create();
-        $book = books::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
+        $author = Author::factory()->create();
+        $category = Category::factory()->create();
+        $book = Book::factory()->create(['category_id' => $category->id, 'author_id' => $author->id]);
         session()->put('cartItems', [
             'name' => $book->name,
             'image' => $book->image,

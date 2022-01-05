@@ -2,7 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Models\categories;
+
+use App\Models\Category;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -16,19 +17,22 @@ class CategoryTest extends TestCase
      */
     public function testcategory()
     {
-        $category = categories::factory()->create();
+        $this->login();
+        $category = Category::factory()->create();
         $this->get(route('categories.index'))
         ->assertOk()
         ->assertSee($category->name);
     }
 
     public function testCreate(){
+        $this->login();
         $this->get(route('categories.create'))
         ->assertOk()
         ->assertSeeText('Category Name');
     }   
 
     public function testStore(){
+        $this->login();
         $this->post(route('categories.store'),[
             'name' => 'Biology'
         ])
@@ -36,7 +40,7 @@ class CategoryTest extends TestCase
         ->assertRedirect();
 
         $this->assertDatabaseHas(
-            (new categories())->getTable(),
+            (new Category())->getTable(),
             [
                 'name' => 'Biology'
             ]
@@ -44,14 +48,16 @@ class CategoryTest extends TestCase
     }
 
     public function testEdit(){
-        $category = categories::factory()->create();
+        $this->login();
+        $category = Category::factory()->create();
         $this->get(route('categories.edit', $category->id))
         ->assertOk()
         ->assertSee($category->name);
     }
 
     public function testUpdate(){
-        $category = categories::factory()->create();
+        $this->login();
+        $category = Category::factory()->create();
         $this->put(route('categories.update', $category->id),[
             'name' => 'Biology'
         ])
@@ -59,7 +65,7 @@ class CategoryTest extends TestCase
         ->assertRedirect();
 
         $this->assertDatabaseHas(
-            (new categories())->getTable(),
+            (new Category())->getTable(),
             [
                 'name' => 'Biology'
             ]
@@ -67,7 +73,8 @@ class CategoryTest extends TestCase
     }   
 
     public function testDelete(){
-        $category = categories::factory()->create();
+        $this->login();
+        $category = Category::factory()->create();
         $this->get(route('categories.destroy', $category->id))
         ->assertOk();
     }

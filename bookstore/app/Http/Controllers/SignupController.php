@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\categories;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -11,7 +11,7 @@ class SignupController extends Controller
 {
     public function index()
     {
-        $categories = categories::get();
+        $categories = Category::get();
         return view('signup',[
             'categories' =>$categories
        
@@ -33,6 +33,5 @@ class SignupController extends Controller
         $user->save();
         return redirect('index');
 
-    }
-    
+    }    
 }
