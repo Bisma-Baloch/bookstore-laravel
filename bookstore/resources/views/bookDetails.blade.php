@@ -5,7 +5,7 @@
 <br><br><br>
 <div class="row mx-auto w-75">
     <div class="col-sm-4">
-        <img src="{{ asset($book->image) }}" width="320px" height="400px">
+        <img src="{{ asset($book->image) }}" width="280px" height="340px">
 
     </div>
     <div class="col-sm-8">

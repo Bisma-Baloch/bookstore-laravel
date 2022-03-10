@@ -29,7 +29,7 @@
                 <div class="form-group col-md-6">
                     <label>Author</label>
                     <select class="form-control" name="author_id">
-                        <option selected>Choose Author...</option>
+                        <option selected>{{$books->author->name}}</option>
                         @foreach ($authors as $author)
                         <option value="{{$author->id}}">{{$author->name}}</option>
                         @endforeach
@@ -38,11 +38,10 @@
                 <div class="form-group col-md-6">
                     <label>Category</label>
                     <select class="form-control" name="category_id">
-                        <option selected>Choose Category...</option>
+                        <option selected>{{$books->category->name}}</option>
                         @foreach ($categories as $category)
                         <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
-                        <option>...</option>
                     </select>
                 </div>
             </div>

@@ -2,7 +2,6 @@
 
 @section('content')
 <br>
-    {{-- <h4 class="text-center">Welcome {{ Auth::user()->name }}</h4> --}}
     <br><br>
     <table class="table mx-auto text-center">
         @if (empty($orders))
@@ -11,6 +10,10 @@
             </tr>
         @else
 
+        @php
+        $total_items = 0;
+        $total_amount = 0;
+    @endphp
             <tr>
                 <th>Order Id </th>
                 <th>Total Quantity</th>
